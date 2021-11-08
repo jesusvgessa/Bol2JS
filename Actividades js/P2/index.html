@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2</title>
+</head>
+
+<body>
+
+    <script>
+        window.onload = tiempo;
+        var iSegundos = prompt("Inserte el numero de segundos que ha de contar..");
+
+        function tiempo() {
+            //Creo un h1 con el texto 'esperando...'
+            var h1 = document.createElement('h1');
+
+            //Le doy un id para pasarselo por referencia en el setTimeout,
+            //que es donde realizo la cuenta atras
+            h1.setAttribute("id", "parpadea");
+            h1.setAttribute("color","black")
+            h1.innerHTML = "Esperando...";
+            document.body.appendChild(h1);
+
+            setTimeout(function() {
+                function BlinkIt(){
+                    h1.setAttribute("color","(color == '#ffffff') ? 'red' : '#ffffff'")
+                }
+
+                document.getElementById("parpadea").innerHTML = "¡Tiempo agotado!";
+                window.setInterval(BlinkIt,500);
+                document.body.style.backgroundColor = 'red';
+            }, iSegundos * 1000);
+        }
+    </script>
+</body>
+
+</html>
