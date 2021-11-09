@@ -10,10 +10,16 @@
 </head>
 
 <body>
-    <h1>Los decibelio</h1>
     <div class="form">
-        <p>Potencia 1: </p><input type="text" id="p1"><br>
-        <p>Potencia 2: </p><input type="text" id="p2"><br><br>
+        <h1>Los decibelio</h1>
+        <div class="datos">
+            <input type="text" id="p1" required="required">
+            <label>Potencia 1:</label>
+        </div><br>
+        <div class="datos">
+            <input type="text" id="p2" required="required">
+            <label>Potencia 2:</label>
+        </div><br><br>
         <button onclick="calcularDecibelios()">Calcular</button>
     </div>
     <script src="script.js"></script>

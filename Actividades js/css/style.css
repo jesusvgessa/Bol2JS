@@ -10,22 +10,60 @@ body{
     font-size: large;
 }
 
-h1{
-    text-align: center;
-    text-transform: uppercase;
-    padding: 3em;
-}
-
 .form{
     border: 0.2em solid black;
+    background: linear-gradient(#141e30, #243b55);
     border-radius: 1em;
-    width: 40%;
-    padding: 1em;
+    width: 40em;
+    height: 20em;
+    padding: 5em;
     margin: 0 auto;
     margin-top: 2em;
-    text-align: center;
+    box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.6);
 }
 
+.form h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.form .datos{
+    position:relative;
+}
+
+.form .datos input {
+    width: 100%;
+    padding: 1em 0;
+    font-size: 1em;
+    color: white;
+    margin-bottom: 2em;
+    border: none; /* Para quitarle los bordes al cuadro de texto */
+    outline: none;
+    border-bottom: 0.1em solid white;
+    background: transparent;
+}
+
+
+.form .datos label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1em 0;
+    font-size: 1em;
+    color: white;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.form .datos input:focus~label,
+.form .datos input:valid~label {
+    top: -1em;
+    left: 0;
+    color: #03e9f4;
+    font-size: 0.8em;
+}
 
 
 /* Footer */
