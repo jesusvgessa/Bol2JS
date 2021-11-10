@@ -91,7 +91,7 @@ body{
     box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.6);
     border-radius: 2em;
     padding: 2em;
-    height: 3em;
+    height: auto;
     width: 20em;
     margin: 0 auto;
     margin-bottom: 2em;
