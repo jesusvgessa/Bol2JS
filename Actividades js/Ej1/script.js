@@ -6,6 +6,7 @@ function calcularDecibelios() {
     //Algoritmo:
     var fDecibelios = (10*Math.log10(iP1/iP2)).toFixed(2);
     var resultado = document.createElement('p');
-    resultado.innerHTML = fDecibelios;
+    resultado.innerHTML = "Resultado: "+fDecibelios;
+    resultado.setAttribute("class","res");
     document.body.appendChild(resultado);
 }//Fin Funcion

@@ -11,14 +11,14 @@ body{
 }
 
 .form{
-    border: 0.2em solid black;
     background: linear-gradient(#141e30, #243b55);
     border-radius: 1em;
     width: 40em;
-    height: 20em;
+    height: 25em;
     padding: 5em;
     margin: 0 auto;
     margin-top: 2em;
+    margin-bottom: 2em;
     box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.6);
 }
 
@@ -65,5 +65,36 @@ body{
     font-size: 0.8em;
 }
 
+.form button{
+    float: right;
+    height: 4em;
+    width: 10em;
+    background-color: #141e30;
+    border-radius: 2em;
+    color: white;
+    text-transform: uppercase;
+    border: 0.2em solid white;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.form button:hover{
+    background-color: #03e9f4;
+    color: white;
+    box-shadow: teal;
+}
+
+.res{
+    text-align: center;
+    background: linear-gradient(#243b55,#141e30);
+    color: white;
+    box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.6);
+    border-radius: 2em;
+    padding: 2em;
+    height: 3em;
+    width: 20em;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
 
 /* Footer */
