@@ -19,7 +19,11 @@ function hacerTabla() {
         for (var i = 0; i < sPujadoresPujas.length; i++) {
             sPujadoresPujas[i] = sPujadoresPujas[i].split(',');
         } //Fin Para
-        //Aqui ya tendria la tabla bidimensional
+        //Aqui ya tendria la tabla bidimensionalç
+
+        //Creo un div, donde voy a meter todas las tablas
+        var res = document.createElement('div');
+        res.setAttribute("class","res");
 
         //Creo la tabla desordenada
         var tablaDesordenada = document.createElement('table');
@@ -45,11 +49,15 @@ function hacerTabla() {
             tablaDesordenada.appendChild(tr);
         } //Fin Para
 
-        //Titulo de cada tabla+tabla
+        //Creo un div, e inserto el titulo y la tabla
+        var tabla1 = document.createElement('div');
+        tabla1.setAttribute("class","tabla");
         var titulo = document.createElement('h1');
         titulo.innerHTML = "Desordenada:";
-        document.body.appendChild(titulo);
-        document.body.appendChild(tablaDesordenada);
+        tabla1.appendChild(titulo);
+        tabla1.appendChild(tablaDesordenada);
+        //Y lo añado al div res, que va acontener las 3 tablas
+        res.appendChild(tabla1);
 
         //Ordeno la tabla por nombre y vuelvo a crear otra tabla
         sPujadoresPujas.sort();
@@ -78,10 +86,14 @@ function hacerTabla() {
         } //Fin Para
         
         //Titulo de cada tabla+tabla
+        var tabla2 = document.createElement('div');
+        tabla2.setAttribute("class","tabla");
         var titulo = document.createElement('h1');
         titulo.innerHTML = "Ordenadas por Nombre:";
-        document.body.appendChild(titulo);
-        document.body.appendChild(tablaOrdNombre);
+        tabla2.appendChild(titulo);
+        tabla2.appendChild(tablaOrdNombre);
+        //Añado al res
+        res.appendChild(tabla2);
 
         //Ordeno la tabla por numero y vuelvo a crear la tabla
         sPujadoresPujas.sort(ordenaNum);
@@ -120,6 +132,7 @@ function hacerTabla() {
     }else{
         var titulo = document.createElement('h1');
         titulo.innerHTML = "Escribe algo";
+        titulo.setAttribute("class","res")
         document.body.appendChild(titulo);
     }//Fin Si
 } //Fin Funcion
