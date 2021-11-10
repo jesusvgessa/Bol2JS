@@ -8,5 +8,5 @@ function pasarCadena() {
         sCadenaInv = sCadenaInv + sCadena[i - 1];
     } //Fin Para
 
-    document.getElementById("resultado").innerHTML = sCadenaInv;
+    document.getElementById("resultado").innerHTML = "Resultado: "+sCadenaInv;
 } //Fin Funcion
