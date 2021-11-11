@@ -1,20 +1,26 @@
-window.onload = tiempo;
-        var iSegundos = prompt("Inserte el numero de segundos que ha de contar..");
+function cuentaAtras() {
+    var sTiempo = document.getElementById('tiempo').value;
 
-        function tiempo() {
-            //Creo un h1 con el texto 'esperando...'
-            var h1 = document.createElement('h1');
+    var h1 = document.createElement("h1");
+    h1.innerHTML = "Esperando...";
+    h1.style.textAlign = "center";
+    h1.setAttribute("id", "parpadea");
+    document.body.appendChild(h1);
+    var body = document.createElement("body");
 
-            //Le doy un id para pasarselo por referencia en el setTimeout,
-            //que es donde realizo la cuenta atras
-            h1.setAttribute("id", "parpadea2");
-            h1.innerHTML = "Esperando...";
-            document.body.appendChild(h1);
+    setTimeout(function() {
+        h1.innerHTML = "¡TIEMPO AGOTADO!";
+        document.body.appendChild(h1);
+        h1.style.color = "white";
+        h1.style.textAlign = "center";
+        document.body.style.background = "red";
+        window.setInterval(BlinkIt, 400);
+        var color = "red";
 
-            setTimeout(function() {
-                document.getElementById("parpadea2").innerHTML = "¡Tiempo agotado!";
-                //Le doy otro id 
-                h1.setAttribute("id", "parpadea");
-                document.body.style.backgroundColor = 'red';
-            }, iSegundos * 1000);
+        function BlinkIt() {
+            var blink = document.getElementById("parpadea");
+            color = (color == "#ffffff") ? "red" : "#ffffff";
+            blink.style.color = color;
         }
+    }, 1000 * sTiempo);
+}

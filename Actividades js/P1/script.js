@@ -1,16 +1,16 @@
-function ordenaNum(a,b){
-    if(a[1]===b[1]){
+function ordenaNum(a, b) {
+    if (a[1] === b[1]) {
         return 0;
-    }else{
-        return (a[1]<b[1]) ? -1 : 1;
-    }//Fin  si
+    } else {
+        return (a[1] < b[1]) ? -1 : 1;
+    } //Fin  si
 }
 
 function hacerTabla() {
     //Entorno:
     var sPujas = document.getElementById("pujas").value;
 
-    if (sPujas != ""){
+    if (sPujas != "") {
 
         //Primer split para separar por ;
         var sPujadoresPujas = sPujas.split(';');
@@ -23,7 +23,7 @@ function hacerTabla() {
 
         //Creo un div, donde voy a meter todas las tablas
         var res = document.createElement('div');
-        res.setAttribute("class","res");
+        res.setAttribute("class", "res");
 
         //Creo la tabla desordenada
         var tablaDesordenada = document.createElement('table');
@@ -51,12 +51,14 @@ function hacerTabla() {
 
         //Creo un div, e inserto el titulo y la tabla
         var tabla1 = document.createElement('div');
-        tabla1.setAttribute("class","tabla");
+        tabla1.setAttribute("class", "tabla");
         var titulo = document.createElement('h1');
         titulo.innerHTML = "Desordenada:";
         tabla1.appendChild(titulo);
         tabla1.appendChild(tablaDesordenada);
+
         //Y lo añado al div res, que va acontener las 3 tablas
+        // Lo hago para despues utilizarlo en el css llamandolo por la clase
         res.appendChild(tabla1);
 
         //Ordeno la tabla por nombre y vuelvo a crear otra tabla
@@ -84,10 +86,10 @@ function hacerTabla() {
             tr.appendChild(td2);
             tablaOrdNombre.appendChild(tr);
         } //Fin Para
-        
+
         //Titulo de cada tabla+tabla
         var tabla2 = document.createElement('div');
-        tabla2.setAttribute("class","tabla");
+        tabla2.setAttribute("class", "tabla");
         var titulo = document.createElement('h1');
         titulo.innerHTML = "Ordenadas por Nombre:";
         tabla2.appendChild(titulo);
@@ -120,19 +122,25 @@ function hacerTabla() {
             tr.appendChild(td2);
             tablaOrdNum.appendChild(tr);
         } //Fin Para
-        
+
         //Titulo de cada tabla+tabla
+        var tabla3 = document.createElement('div');
+        tabla3.setAttribute("class", "tabla");
         var titulo = document.createElement('h1');
         titulo.innerHTML = "Ordenadas por Numero:";
-        document.body.appendChild(titulo);
-        document.body.appendChild(tablaOrdNum);
-        
+        tabla3.appendChild(titulo);
+        tabla3.appendChild(tablaOrdNum);
 
-        document.getElementById('myform').reset();
-    }else{
+        res.appendChild(tabla3);
+        document.body.appendChild(res);
+
+        document.getElementById('myform').reset(); // Para resetear el input
+    } else {
         var titulo = document.createElement('h1');
         titulo.innerHTML = "Escribe algo";
-        titulo.setAttribute("class","res")
+        titulo.setAttribute("class", "res")
         document.body.appendChild(titulo);
-    }//Fin Si
+
+        document.getElementById('myform').reset();
+    } //Fin Si
 } //Fin Funcion
